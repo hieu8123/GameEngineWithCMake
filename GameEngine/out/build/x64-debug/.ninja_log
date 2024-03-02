@@ -1,0 +1,13 @@
+# ninja log v5
+1	381	7311060359349284	Engine/CMakeFiles/VIEngine.dir/VIEngine/core/Application.cpp.obj	a105ae1697cedb5
+382	442	7311060359969349	Engine/VIEngine.lib	fc05681f2d8b58e6
+20	670	7311072678633945	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
+2	359	7311073275078224	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
+9	387	7311075182574638	Engine/CMakeFiles/VIEngine.dir/VIEngine/core/Application.cpp.obj	a105ae1697cedb5
+12	392	7311075182574638	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
+387	444	7311075183150807	Engine/VIEngine.lib	fc05681f2d8b58e6
+444	721	7311075185771789	Game/Game.exe	e01964559fca22ac
+9	370	7311075503790247	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
+371	478	7311075504600226	Game/Game.exe	e01964559fca22ac
+10	383	7311075831443137	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
+383	496	7311075832274316	Game/Game.exe	e01964559fca22ac
