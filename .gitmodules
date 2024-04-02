@@ -1,0 +1,3 @@
+[submodule "GameEngine/Venders/glfw"]
+	path = GameEngine/Venders/glfw
+	url = https://github.com/glfw/glfw.git

@@ -63,6 +63,36 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles\install.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles\install\local.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install\local: phony CMakeFiles\install\local.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # D:/GameEngine_code/GameEngine/CMakeLists.txt
@@ -75,12 +105,12 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 #############################################
 # Order-only phony target for VIEngine
 
-build cmake_object_order_depends_target_VIEngine: phony || Engine\CMakeFiles\VIEngine.dir
+build cmake_object_order_depends_target_VIEngine: phony || cmake_object_order_depends_target_glfw
 
 build Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\out\build\x64-debug\Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx || cmake_object_order_depends_target_VIEngine
-  DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_VI_ENGINE
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YcD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx
-  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Vendors\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\include
   OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
   OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir
   TARGET_COMPILE_PDB = Engine\CMakeFiles\VIEngine.dir\VIEngine.pdb
@@ -92,21 +122,39 @@ build Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.obj: CXX_COMPILER__VIEngine_u
 
 build Engine\CMakeFiles\VIEngine.dir\.\cmake_pch.cxx.pch: phony Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.obj
 
-build Engine\CMakeFiles\VIEngine.dir\VIEngine\core\Application.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\core\Application.cpp | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_VIEngine
-  DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
+build Engine\CMakeFiles\VIEngine.dir\VIEngine\Core\Application.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\Core\Application.cpp | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_VIEngine
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_VI_ENGINE
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YuD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx
-  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Vendors\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\include
   OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
-  OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir\VIEngine\core
+  OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir\VIEngine\Core
   TARGET_COMPILE_PDB = Engine\CMakeFiles\VIEngine.dir\VIEngine.pdb
   TARGET_PDB = Engine\VIEngine.pdb
 
-build Engine\CMakeFiles\VIEngine.dir\VIEngine\core\logger\logger.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\core\logger\logger.cpp | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_VIEngine
-  DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
+build Engine\CMakeFiles\VIEngine.dir\VIEngine\Core\Logger\logger.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\Core\Logger\logger.cpp | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_VIEngine
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_VI_ENGINE
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YuD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx
-  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Vendors\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\include
   OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
-  OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir\VIEngine\core\logger
+  OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir\VIEngine\Core\Logger
+  TARGET_COMPILE_PDB = Engine\CMakeFiles\VIEngine.dir\VIEngine.pdb
+  TARGET_PDB = Engine\VIEngine.pdb
+
+build Engine\CMakeFiles\VIEngine.dir\VIEngine\Window\GLFWPlatformWindow.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\Window\GLFWPlatformWindow.cpp | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_VIEngine
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_VI_ENGINE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YuD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Vendors\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\include
+  OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
+  OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir\VIEngine\Window
+  TARGET_COMPILE_PDB = Engine\CMakeFiles\VIEngine.dir\VIEngine.pdb
+  TARGET_PDB = Engine\VIEngine.pdb
+
+build Engine\CMakeFiles\VIEngine.dir\VIEngine\Window\WindowPlatform.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\Window\WindowPlatform.cpp | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_VIEngine
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_VI_ENGINE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YuD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Vendors\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\include
+  OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
+  OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir\VIEngine\Window
   TARGET_COMPILE_PDB = Engine\CMakeFiles\VIEngine.dir\VIEngine.pdb
   TARGET_PDB = Engine\VIEngine.pdb
 
@@ -118,7 +166,7 @@ build Engine\CMakeFiles\VIEngine.dir\VIEngine\core\logger\logger.cpp.obj: CXX_CO
 #############################################
 # Link the static library Engine\VIEngine.lib
 
-build Engine\VIEngine.lib: CXX_STATIC_LIBRARY_LINKER__VIEngine_Debug Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.obj Engine\CMakeFiles\VIEngine.dir\VIEngine\core\Application.cpp.obj Engine\CMakeFiles\VIEngine.dir\VIEngine\core\logger\logger.cpp.obj
+build Engine\VIEngine.lib: CXX_STATIC_LIBRARY_LINKER__VIEngine_Debug Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.obj Engine\CMakeFiles\VIEngine.dir\VIEngine\Core\Application.cpp.obj Engine\CMakeFiles\VIEngine.dir\VIEngine\Core\Logger\logger.cpp.obj Engine\CMakeFiles\VIEngine.dir\VIEngine\Window\GLFWPlatformWindow.cpp.obj Engine\CMakeFiles\VIEngine.dir\VIEngine\Window\WindowPlatform.cpp.obj || Vendors\glfw\src\glfw3.lib
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
@@ -151,6 +199,36 @@ build Engine\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build Engine\rebuild_cache: phony Engine\CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build Engine\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Engine\CMakeFiles\install.util: CUSTOM_COMMAND Engine\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Engine && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Engine\install: phony Engine\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Engine\CMakeFiles\install\local.util: CUSTOM_COMMAND Engine\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Engine && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Engine\install\local: phony Engine\CMakeFiles\install\local.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # D:/GameEngine_code/GameEngine/CMakeLists.txt
@@ -163,12 +241,12 @@ build Engine\rebuild_cache: phony Engine\CMakeFiles\rebuild_cache.util
 #############################################
 # Order-only phony target for Game
 
-build cmake_object_order_depends_target_Game: phony || cmake_object_order_depends_target_VIEngine
+build cmake_object_order_depends_target_Game: phony || cmake_object_order_depends_target_VIEngine cmake_object_order_depends_target_glfw
 
 build Game\CMakeFiles\Game.dir\cmake_pch.cxx.obj: CXX_COMPILER__Game_unscanned_Debug D$:\GameEngine_code\GameEngine\out\build\x64-debug\Game\CMakeFiles\Game.dir\cmake_pch.cxx | Game\CMakeFiles\Game.dir\cmake_pch.hxx || cmake_object_order_depends_target_Game
-  DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_VI_ENGINE
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YcD:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx
-  INCLUDES = -ID:\GameEngine_code\GameEngine\Game\Source -ID:\GameEngine_code\GameEngine\Engine -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Game\Source -ID:\GameEngine_code\GameEngine\Engine -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Vendors\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\include
   OBJECT_DIR = Game\CMakeFiles\Game.dir
   OBJECT_FILE_DIR = Game\CMakeFiles\Game.dir
   TARGET_COMPILE_PDB = Game\CMakeFiles\Game.dir\
@@ -181,9 +259,9 @@ build Game\CMakeFiles\Game.dir\cmake_pch.cxx.obj: CXX_COMPILER__Game_unscanned_D
 build Game\CMakeFiles\Game.dir\.\cmake_pch.cxx.pch: phony Game\CMakeFiles\Game.dir\cmake_pch.cxx.obj
 
 build Game\CMakeFiles\Game.dir\Source\Game.cpp.obj: CXX_COMPILER__Game_unscanned_Debug D$:\GameEngine_code\GameEngine\Game\Source\Game.cpp | Game\CMakeFiles\Game.dir\cmake_pch.hxx Game\CMakeFiles\Game.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_Game
-  DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_VI_ENGINE
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YuD:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx
-  INCLUDES = -ID:\GameEngine_code\GameEngine\Game\Source -ID:\GameEngine_code\GameEngine\Engine -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Game\Source -ID:\GameEngine_code\GameEngine\Engine -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Vendors\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\include
   OBJECT_DIR = Game\CMakeFiles\Game.dir
   OBJECT_FILE_DIR = Game\CMakeFiles\Game.dir\Source
   TARGET_COMPILE_PDB = Game\CMakeFiles\Game.dir\
@@ -197,11 +275,11 @@ build Game\CMakeFiles\Game.dir\Source\Game.cpp.obj: CXX_COMPILER__Game_unscanned
 #############################################
 # Link the executable Game\Game.exe
 
-build Game\Game.exe: CXX_EXECUTABLE_LINKER__Game_Debug Game\CMakeFiles\Game.dir\cmake_pch.cxx.obj Game\CMakeFiles\Game.dir\Source\Game.cpp.obj | Engine\VIEngine.lib || Engine\VIEngine.lib
+build Game\Game.exe: CXX_EXECUTABLE_LINKER__Game_Debug Game\CMakeFiles\Game.dir\cmake_pch.cxx.obj Game\CMakeFiles\Game.dir\Source\Game.cpp.obj | Engine\VIEngine.lib Vendors\glfw\src\glfw3.lib || Engine\VIEngine.lib Vendors\glfw\src\glfw3.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = Engine\VIEngine.lib  spdlogd.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  LINK_PATH = -LIBPATH:D:\GameEngine_code\GameEngine\Venders\bin
+  LINK_LIBRARIES = Engine\VIEngine.lib  spdlogd.lib  Vendors\glfw\src\glfw3.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_PATH = -LIBPATH:D:\GameEngine_code\GameEngine\Vendors\bin
   OBJECT_DIR = Game\CMakeFiles\Game.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -233,6 +311,453 @@ build Game\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 
 build Game\rebuild_cache: phony Game\CMakeFiles\rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build Game\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Game\CMakeFiles\install.util: CUSTOM_COMMAND Game\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Game && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Game\install: phony Game\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Game\CMakeFiles\install\local.util: CUSTOM_COMMAND Game\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Game && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Game\install\local: phony Game\CMakeFiles\install\local.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/GameEngine_code/GameEngine/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for uninstall
+
+build Vendors\glfw\uninstall: phony Vendors\glfw\CMakeFiles\uninstall
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendors\glfw\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendors\glfw\edit_cache: phony Vendors\glfw\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendors\glfw\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GameEngine_code\GameEngine -BD:\GameEngine_code\GameEngine\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\rebuild_cache: phony Vendors\glfw\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Vendors\glfw\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Vendors\glfw\CMakeFiles\install.util: CUSTOM_COMMAND Vendors\glfw\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\install: phony Vendors\glfw\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Vendors\glfw\CMakeFiles\install\local.util: CUSTOM_COMMAND Vendors\glfw\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\install\local: phony Vendors\glfw\CMakeFiles\install\local.util
+
+
+#############################################
+# Custom command for Vendors\glfw\CMakeFiles\uninstall
+
+build Vendors\glfw\CMakeFiles\uninstall | ${cmake_ninja_workdir}Vendors\glfw\CMakeFiles\uninstall: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P D:/GameEngine_code/GameEngine/out/build/x64-debug/Vendors/glfw/cmake_uninstall.cmake"
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/GameEngine_code/GameEngine/Vendors/glfw/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Order-only phony target for glfw
+
+build cmake_object_order_depends_target_glfw: phony || Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\context.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\init.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\input.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\input.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\monitor.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\platform.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\platform.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\vulkan.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\vulkan.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\window.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\egl_context.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\egl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\osmesa_context.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\osmesa_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\null_init.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\null_init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\null_monitor.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\null_monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\null_window.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\null_window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\null_joystick.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\null_joystick.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\win32_module.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\win32_module.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\win32_time.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\win32_time.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\win32_thread.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\win32_thread.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\win32_init.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\win32_init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\win32_joystick.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\win32_joystick.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\win32_monitor.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\win32_monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\win32_window.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\win32_window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+build Vendors\glfw\src\CMakeFiles\glfw.dir\wgl_context.c.obj: C_COMPILER__glfw_unscanned_Debug D$:\GameEngine_code\GameEngine\Vendors\glfw\src\wgl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -D_CRT_SECURE_NO_WARNINGS -D_GLFW_WIN32 -D_UNICODE
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI /W3
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Vendors\glfw\include -ID:\GameEngine_code\GameEngine\Vendors\glfw\src -ID:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Link the static library Vendors\glfw\src\glfw3.lib
+
+build Vendors\glfw\src\glfw3.lib: C_STATIC_LIBRARY_LINKER__glfw_Debug Vendors\glfw\src\CMakeFiles\glfw.dir\context.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\init.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\input.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\monitor.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\platform.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\vulkan.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\window.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\egl_context.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\osmesa_context.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\null_init.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\null_monitor.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\null_window.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\null_joystick.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\win32_module.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\win32_time.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\win32_thread.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\win32_init.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\win32_joystick.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\win32_monitor.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\win32_window.c.obj Vendors\glfw\src\CMakeFiles\glfw.dir\wgl_context.c.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = Vendors\glfw\src\CMakeFiles\glfw.dir\glfw.pdb
+  TARGET_FILE = Vendors\glfw\src\glfw3.lib
+  TARGET_PDB = Vendors\glfw\src\glfw3.pdb
+
+
+#############################################
+# Utility command for update_mappings
+
+build Vendors\glfw\src\update_mappings: phony Vendors\glfw\src\CMakeFiles\update_mappings
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendors\glfw\src\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendors\glfw\src\edit_cache: phony Vendors\glfw\src\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendors\glfw\src\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GameEngine_code\GameEngine -BD:\GameEngine_code\GameEngine\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\src\rebuild_cache: phony Vendors\glfw\src\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Vendors\glfw\src\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Vendors\glfw\src\CMakeFiles\install.util: CUSTOM_COMMAND Vendors\glfw\src\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\src\install: phony Vendors\glfw\src\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Vendors\glfw\src\CMakeFiles\install\local.util: CUSTOM_COMMAND Vendors\glfw\src\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\src\install\local: phony Vendors\glfw\src\CMakeFiles\install\local.util
+
+
+#############################################
+# Custom command for Vendors\glfw\src\CMakeFiles\update_mappings
+
+build Vendors\glfw\src\CMakeFiles\update_mappings | ${cmake_ninja_workdir}Vendors\glfw\src\CMakeFiles\update_mappings: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\Vendors\glfw\src && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P D:/GameEngine_code/GameEngine/Vendors/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h"
+  DESC = Updating gamepad mappings from upstream repository
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/GameEngine_code/GameEngine/Vendors/glfw/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendors\glfw\docs\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\docs && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendors\glfw\docs\edit_cache: phony Vendors\glfw\docs\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendors\glfw\docs\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\docs && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\GameEngine_code\GameEngine -BD:\GameEngine_code\GameEngine\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\docs\rebuild_cache: phony Vendors\glfw\docs\CMakeFiles\rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Vendors\glfw\docs\list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Vendors\glfw\docs\CMakeFiles\install.util: CUSTOM_COMMAND Vendors\glfw\docs\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\docs && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\docs\install: phony Vendors\glfw\docs\CMakeFiles\install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Vendors\glfw\docs\CMakeFiles\install\local.util: CUSTOM_COMMAND Vendors\glfw\docs\all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\GameEngine_code\GameEngine\out\build\x64-debug\Vendors\glfw\docs && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Vendors\glfw\docs\install\local: phony Vendors\glfw\docs\CMakeFiles\install\local.util
+
 # =============================================================================
 # Target aliases.
 
@@ -244,6 +769,14 @@ build VIEngine: phony Engine\VIEngine.lib
 
 build VIEngine.lib: phony Engine\VIEngine.lib
 
+build glfw: phony Vendors\glfw\src\glfw3.lib
+
+build glfw3.lib: phony Vendors\glfw\src\glfw3.lib
+
+build uninstall: phony Vendors\glfw\uninstall
+
+build update_mappings: phony Vendors\glfw\src\update_mappings
+
 # =============================================================================
 # Folder targets.
 
@@ -252,7 +785,7 @@ build VIEngine.lib: phony Engine\VIEngine.lib
 #############################################
 # Folder: D:/GameEngine_code/GameEngine/out/build/x64-debug
 
-build all: phony Engine\all Game\all
+build all: phony Engine\all Game\all Vendors\glfw\all
 
 # =============================================================================
 
@@ -269,20 +802,41 @@ build Engine\all: phony Engine\VIEngine.lib
 build Game\all: phony Game\Game.exe
 
 # =============================================================================
+
+#############################################
+# Folder: D:/GameEngine_code/GameEngine/out/build/x64-debug/Vendors/glfw
+
+build Vendors\glfw\all: phony Vendors\glfw\src\all Vendors\glfw\docs\all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/GameEngine_code/GameEngine/out/build/x64-debug/Vendors/glfw/docs
+
+build Vendors\glfw\docs\all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: D:/GameEngine_code/GameEngine/out/build/x64-debug/Vendors/glfw/src
+
+build Vendors\glfw\src\all: phony Vendors\glfw\src\glfw3.lib
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.28.0-msvc1\CMakeCCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeCXXCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeRCCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeSystem.cmake D$:\GameEngine_code\GameEngine\CMakeLists.txt D$:\GameEngine_code\GameEngine\Engine\CMakeLists.txt D$:\GameEngine_code\GameEngine\Game\CMakeLists.txt
+build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\BasicConfigVersion-SameMajorVersion.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CheckIncludeFile.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CheckLibraryExists.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\FindDoxygen.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\FindThreads.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\GNUInstallDirs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles\3.28.0-msvc1\CMakeCCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeCXXCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeRCCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeSystem.cmake D$:\GameEngine_code\GameEngine\CMakeLists.txt D$:\GameEngine_code\GameEngine\Engine\CMakeLists.txt D$:\GameEngine_code\GameEngine\Game\CMakeLists.txt D$:\GameEngine_code\GameEngine\Vendors\glfw\CMakeLists.txt D$:\GameEngine_code\GameEngine\Vendors\glfw\CMake\cmake_uninstall.cmake.in D$:\GameEngine_code\GameEngine\Vendors\glfw\CMake\glfw3.pc.in D$:\GameEngine_code\GameEngine\Vendors\glfw\CMake\glfw3Config.cmake.in D$:\GameEngine_code\GameEngine\Vendors\glfw\docs\CMakeLists.txt D$:\GameEngine_code\GameEngine\Vendors\glfw\src\CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.28.0-msvc1\CMakeCCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeCXXCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeRCCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeSystem.cmake D$:\GameEngine_code\GameEngine\CMakeLists.txt D$:\GameEngine_code\GameEngine\Engine\CMakeLists.txt D$:\GameEngine_code\GameEngine\Game\CMakeLists.txt: phony
+build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\BasicConfigVersion-SameMajorVersion.cmake.in C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeDependentOption.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakePackageConfigHelpers.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CheckCSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CheckIncludeFile.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\CheckLibraryExists.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\FindDoxygen.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\FindThreads.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\GNUInstallDirs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Internal\CheckSourceCompiles.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\Platform\WindowsPaths.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.28\Modules\WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles\3.28.0-msvc1\CMakeCCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeCXXCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeRCCompiler.cmake CMakeFiles\3.28.0-msvc1\CMakeSystem.cmake D$:\GameEngine_code\GameEngine\CMakeLists.txt D$:\GameEngine_code\GameEngine\Engine\CMakeLists.txt D$:\GameEngine_code\GameEngine\Game\CMakeLists.txt D$:\GameEngine_code\GameEngine\Vendors\glfw\CMakeLists.txt D$:\GameEngine_code\GameEngine\Vendors\glfw\CMake\cmake_uninstall.cmake.in D$:\GameEngine_code\GameEngine\Vendors\glfw\CMake\glfw3.pc.in D$:\GameEngine_code\GameEngine\Vendors\glfw\CMake\glfw3Config.cmake.in D$:\GameEngine_code\GameEngine\Vendors\glfw\docs\CMakeLists.txt D$:\GameEngine_code\GameEngine\Vendors\glfw\src\CMakeLists.txt: phony
 
 
 #############################################

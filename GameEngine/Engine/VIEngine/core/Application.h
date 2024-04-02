@@ -1,22 +1,30 @@
-namespace VIEngine {
+#pragma once
 
-	struct ApplicationConfiguration {
+#include"pch.h"
+#include"Window/WindowPlatform.h"
+
+namespace VIEngine {
+	struct VI_API ApplicationConfiguration {
 		int Width, Height;
 		const char* Title;
+		EWindowPlatformSpec WindowSpec;
 	};
 
-	class Application {
+	class VI_API Application {
 	public:
-		virtual ~Application() {};
-		virtual bool Init() {return true;}
+		virtual ~Application() = default;
+		bool Init();
+		virtual void OnInitClient() = 0;
 		void Run();
-		virtual  void Shutdown() {}
+		virtual void OnShutdownClient() = 0;
+		void Shutdown();
 	protected:
 		Application() = default;
-		Application(const  ApplicationConfiguration&);
+		Application(const ApplicationConfiguration&);
 	private:
 		ApplicationConfiguration mConfig;
+		Unique<NativeWindow> mNativeWindow;
 	};
 
-	Application* CreateApplication();
+	extern Application* CreateApplication();
 }

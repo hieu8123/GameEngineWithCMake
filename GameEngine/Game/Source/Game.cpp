@@ -1,37 +1,27 @@
-#include <VIEngine/core/entry.h>
-#include <iostream>
-#include "Core/logger/logger.h"
+#include<VIEngine/Core/Entry.h>
+#include<VIEngine/Window/Window.h>
+#include<Core/Logger/Logger.h>
 
 class Game : public VIEngine::Application {
 public:
 	Game(const VIEngine::ApplicationConfiguration& config) : VIEngine::Application(config) {
-		
-		LOG_TRACE("TRACE WORKS");
-		LOG_DEBUG("DEBUG WORKS");
-		LOG_INFO("INFO WORKS");
-		LOG_WARN("WARN WORKS");
-		LOG_ERROR("ERROR WORKS");
-		LOG_CRITICAL("CRITICAL WORKS");
 	}
 
-	virtual bool Init() override{
-		std::cout << "Game is init\n";
-		return  true;
+	virtual void OnInitClient() override {
+		LOG_INFO("Game is init");
 	}
 
-	virtual void Shutdown() override {
-		std::cout << "Game is shutdown\n";
+	virtual void OnShutdownClient() override {
+		LOG_INFO("Game is shutdown");
 	}
 };
 
-
 VIEngine::Application* VIEngine::CreateApplication() {
-	using namespace  VIEngine;
-
-	ApplicationConfiguration  appConfig;
+	VIEngine::ApplicationConfiguration appConfig;
 	appConfig.Width = 800;
 	appConfig.Height = 600;
-	appConfig.Title = "VIEngin fist version!";
+	appConfig.Title = "VIEngine Alpha ver";
+	appConfig.WindowSpec = VIEngine::EWindowPlatformSpec::GLFW;
 
 	return new Game(appConfig);
 }

@@ -36,6 +36,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("D:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/cmake_install.cmake")
   include("D:/GameEngine_code/GameEngine/out/build/x64-debug/Game/cmake_install.cmake")
+  include("D:/GameEngine_code/GameEngine/out/build/x64-debug/Vendors/glfw/cmake_install.cmake")
 
 endif()
 

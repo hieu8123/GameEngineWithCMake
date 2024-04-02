@@ -3,4 +3,5 @@
 #pragma system_header
 #ifdef __cplusplus
 #include "D:/GameEngine_code/GameEngine/Engine/VIEngine/pch.h"
+#include "D:/GameEngine_code/GameEngine/Vendors/include/glad/gl.h"
 #endif // __cplusplus

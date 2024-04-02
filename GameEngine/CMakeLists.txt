@@ -1,6 +1,4 @@
-﻿# CMakeList.txt : CMake project for GameEngine, include source and define
-# project specific logic here.
-#
+﻿
 cmake_minimum_required (VERSION 3.8)
 
 # Enable Hot Reload for MSVC compilers if supported.
@@ -13,3 +11,4 @@ project ("GameEngine")
 
 add_subdirectory(Engine)
 add_subdirectory(Game)
+add_subdirectory(Vendors/glfw)

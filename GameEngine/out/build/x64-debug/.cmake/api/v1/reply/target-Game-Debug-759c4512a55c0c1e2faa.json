@@ -30,13 +30,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 7,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 10,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -51,7 +51,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 11,
+				"line" : 10,
 				"parent" : 0
 			}
 		]
@@ -72,11 +72,15 @@
 			[
 				{
 					"backtrace" : 2,
-					"define" : "DYNAMIC_BUILLD=0"
+					"define" : "DYNAMIC_BUILD=0"
 				},
 				{
 					"backtrace" : 2,
 					"define" : "DYNAMIC_LIB=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "ON_VI_ENGINE"
 				}
 			],
 			"includes" : 
@@ -95,7 +99,11 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/GameEngine_code/GameEngine/Venders/include"
+					"path" : "D:/GameEngine_code/GameEngine/Vendors/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/GameEngine_code/GameEngine/Vendors/glfw/include"
 				}
 			],
 			"language" : "CXX",
@@ -112,6 +120,10 @@
 				{
 					"backtrace" : 2,
 					"header" : "D:/GameEngine_code/GameEngine/Engine/VIEngine/pch.h"
+				},
+				{
+					"backtrace" : 2,
+					"header" : "D:/GameEngine_code/GameEngine/Vendors/include/glad/gl.h"
 				}
 			],
 			"sourceIndexes" : 
@@ -133,11 +145,15 @@
 			[
 				{
 					"backtrace" : 2,
-					"define" : "DYNAMIC_BUILLD=0"
+					"define" : "DYNAMIC_BUILD=0"
 				},
 				{
 					"backtrace" : 2,
 					"define" : "DYNAMIC_LIB=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "ON_VI_ENGINE"
 				}
 			],
 			"includes" : 
@@ -156,7 +172,11 @@
 				},
 				{
 					"backtrace" : 2,
-					"path" : "D:/GameEngine_code/GameEngine/Venders/include"
+					"path" : "D:/GameEngine_code/GameEngine/Vendors/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "D:/GameEngine_code/GameEngine/Vendors/glfw/include"
 				}
 			],
 			"language" : "CXX",
@@ -173,6 +193,10 @@
 				{
 					"backtrace" : 2,
 					"header" : "D:/GameEngine_code/GameEngine/Engine/VIEngine/pch.h"
+				},
+				{
+					"backtrace" : 2,
+					"header" : "D:/GameEngine_code/GameEngine/Vendors/include/glad/gl.h"
 				}
 			],
 			"sourceIndexes" : 
@@ -186,6 +210,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "VIEngine::@8f69bdd092c897d92c1e"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "glfw::@3b1c799898a8435bb2a9"
 		}
 	],
 	"id" : "Game::@971b28586fb25e7ff763",
@@ -203,7 +231,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-LIBPATH:D:\\GameEngine_code\\GameEngine\\Venders\\bin",
+				"fragment" : "-LIBPATH:D:\\GameEngine_code\\GameEngine\\Vendors\\bin",
 				"role" : "libraryPath"
 			},
 			{
@@ -214,6 +242,11 @@
 			{
 				"backtrace" : 4,
 				"fragment" : "spdlogd.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "Vendors\\glfw\\src\\glfw3.lib",
 				"role" : "libraries"
 			},
 			{
