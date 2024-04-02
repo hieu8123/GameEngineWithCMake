@@ -1,13 +1,13 @@
 # ninja log v5
-1	381	7311060359349284	Engine/CMakeFiles/VIEngine.dir/VIEngine/core/Application.cpp.obj	a105ae1697cedb5
-382	442	7311060359969349	Engine/VIEngine.lib	fc05681f2d8b58e6
-20	670	7311072678633945	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
-2	359	7311073275078224	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
-9	387	7311075182574638	Engine/CMakeFiles/VIEngine.dir/VIEngine/core/Application.cpp.obj	a105ae1697cedb5
-12	392	7311075182574638	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
-387	444	7311075183150807	Engine/VIEngine.lib	fc05681f2d8b58e6
-444	721	7311075185771789	Game/Game.exe	e01964559fca22ac
-9	370	7311075503790247	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
-371	478	7311075504600226	Game/Game.exe	e01964559fca22ac
-10	383	7311075831443137	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	7c0c8ef8b1b99eac
-383	496	7311075832274316	Game/Game.exe	e01964559fca22ac
+2416	2478	7312603861620173	Engine/VIEngine.lib	fc05681f2d8b58e6
+3	2392	7312603860739342	Engine/CMakeFiles/VIEngine.dir/VIEngine/core/Application.cpp.obj	dbc7b00c88cb8741
+6	525	7312603842137472	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	d6acdb1a340c4f2c
+18	300	7312606190672878	Game/Game.exe	3c23781c6e5d45d9
+9	120	7337568027949073	build.ninja	c6976d8dcb91dcf7
+8	532	7337578302687940	Engine/CMakeFiles/VIEngine.dir/cmake_pch.cxx.obj	9b27fae29c9de185
+13	539	7337578302687940	Game/CMakeFiles/Game.dir/cmake_pch.cxx.obj	129a4e70cfb26f22
+540	2322	7337578320467628	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	640055cb03c3f02d
+532	2408	7337578321350728	Engine/CMakeFiles/VIEngine.dir/VIEngine/core/Application.cpp.obj	7d66ee808dce3e30
+535	2634	7337578323651423	Engine/CMakeFiles/VIEngine.dir/VIEngine/core/logger/logger.cpp.obj	8a63152f22df4e38
+2639	2755	7337578324851690	Engine/VIEngine.lib	62e4d015bd0df341
+2755	3093	7337578327321631	Game/Game.exe	283a01590e27b497

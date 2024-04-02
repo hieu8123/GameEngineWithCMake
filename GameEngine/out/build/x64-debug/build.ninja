@@ -77,12 +77,36 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 build cmake_object_order_depends_target_VIEngine: phony || Engine\CMakeFiles\VIEngine.dir
 
-build Engine\CMakeFiles\VIEngine.dir\VIEngine\core\Application.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\core\Application.cpp || cmake_object_order_depends_target_VIEngine
+build Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\out\build\x64-debug\Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx || cmake_object_order_depends_target_VIEngine
   DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI
-  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YcD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
+  OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
+  OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir
+  TARGET_COMPILE_PDB = Engine\CMakeFiles\VIEngine.dir\VIEngine.pdb
+  TARGET_PDB = Engine\VIEngine.pdb
+
+
+#############################################
+# Additional output files.
+
+build Engine\CMakeFiles\VIEngine.dir\.\cmake_pch.cxx.pch: phony Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.obj
+
+build Engine\CMakeFiles\VIEngine.dir\VIEngine\core\Application.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\core\Application.cpp | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_VIEngine
+  DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YuD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
   OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
   OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir\VIEngine\core
+  TARGET_COMPILE_PDB = Engine\CMakeFiles\VIEngine.dir\VIEngine.pdb
+  TARGET_PDB = Engine\VIEngine.pdb
+
+build Engine\CMakeFiles\VIEngine.dir\VIEngine\core\logger\logger.cpp.obj: CXX_COMPILER__VIEngine_unscanned_Debug D$:\GameEngine_code\GameEngine\Engine\VIEngine\core\logger\logger.cpp | Engine\CMakeFiles\VIEngine.dir\cmake_pch.hxx Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_VIEngine
+  DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YuD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Engine/CMakeFiles/VIEngine.dir/cmake_pch.hxx
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
+  OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
+  OBJECT_FILE_DIR = Engine\CMakeFiles\VIEngine.dir\VIEngine\core\logger
   TARGET_COMPILE_PDB = Engine\CMakeFiles\VIEngine.dir\VIEngine.pdb
   TARGET_PDB = Engine\VIEngine.pdb
 
@@ -94,7 +118,7 @@ build Engine\CMakeFiles\VIEngine.dir\VIEngine\core\Application.cpp.obj: CXX_COMP
 #############################################
 # Link the static library Engine\VIEngine.lib
 
-build Engine\VIEngine.lib: CXX_STATIC_LIBRARY_LINKER__VIEngine_Debug Engine\CMakeFiles\VIEngine.dir\VIEngine\core\Application.cpp.obj
+build Engine\VIEngine.lib: CXX_STATIC_LIBRARY_LINKER__VIEngine_Debug Engine\CMakeFiles\VIEngine.dir\cmake_pch.cxx.obj Engine\CMakeFiles\VIEngine.dir\VIEngine\core\Application.cpp.obj Engine\CMakeFiles\VIEngine.dir\VIEngine\core\logger\logger.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = Engine\CMakeFiles\VIEngine.dir
@@ -141,10 +165,25 @@ build Engine\rebuild_cache: phony Engine\CMakeFiles\rebuild_cache.util
 
 build cmake_object_order_depends_target_Game: phony || cmake_object_order_depends_target_VIEngine
 
-build Game\CMakeFiles\Game.dir\Source\Game.cpp.obj: CXX_COMPILER__Game_unscanned_Debug D$:\GameEngine_code\GameEngine\Game\Source\Game.cpp || cmake_object_order_depends_target_Game
+build Game\CMakeFiles\Game.dir\cmake_pch.cxx.obj: CXX_COMPILER__Game_unscanned_Debug D$:\GameEngine_code\GameEngine\out\build\x64-debug\Game\CMakeFiles\Game.dir\cmake_pch.cxx | Game\CMakeFiles\Game.dir\cmake_pch.hxx || cmake_object_order_depends_target_Game
   DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI
-  INCLUDES = -ID:\GameEngine_code\GameEngine\Game\Source -ID:\GameEngine_code\GameEngine\Engine -ID:\GameEngine_code\GameEngine\Engine\VIEngine
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YcD:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Game\Source -ID:\GameEngine_code\GameEngine\Engine -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
+  OBJECT_DIR = Game\CMakeFiles\Game.dir
+  OBJECT_FILE_DIR = Game\CMakeFiles\Game.dir
+  TARGET_COMPILE_PDB = Game\CMakeFiles\Game.dir\
+  TARGET_PDB = Game\Game.pdb
+
+
+#############################################
+# Additional output files.
+
+build Game\CMakeFiles\Game.dir\.\cmake_pch.cxx.pch: phony Game\CMakeFiles\Game.dir\cmake_pch.cxx.obj
+
+build Game\CMakeFiles\Game.dir\Source\Game.cpp.obj: CXX_COMPILER__Game_unscanned_Debug D$:\GameEngine_code\GameEngine\Game\Source\Game.cpp | Game\CMakeFiles\Game.dir\cmake_pch.hxx Game\CMakeFiles\Game.dir\cmake_pch.cxx.pch || cmake_object_order_depends_target_Game
+  DEFINES = -DDYNAMIC_BUILLD=0 -DDYNAMIC_LIB=0
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++17 -ZI /YuD:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx /FpD:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/./cmake_pch.cxx.pch /FID:/GameEngine_code/GameEngine/out/build/x64-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx
+  INCLUDES = -ID:\GameEngine_code\GameEngine\Game\Source -ID:\GameEngine_code\GameEngine\Engine -ID:\GameEngine_code\GameEngine\Engine\VIEngine -ID:\GameEngine_code\GameEngine\Venders\include
   OBJECT_DIR = Game\CMakeFiles\Game.dir
   OBJECT_FILE_DIR = Game\CMakeFiles\Game.dir\Source
   TARGET_COMPILE_PDB = Game\CMakeFiles\Game.dir\
@@ -158,10 +197,11 @@ build Game\CMakeFiles\Game.dir\Source\Game.cpp.obj: CXX_COMPILER__Game_unscanned
 #############################################
 # Link the executable Game\Game.exe
 
-build Game\Game.exe: CXX_EXECUTABLE_LINKER__Game_Debug Game\CMakeFiles\Game.dir\Source\Game.cpp.obj | Engine\VIEngine.lib || Engine\VIEngine.lib
+build Game\Game.exe: CXX_EXECUTABLE_LINKER__Game_Debug Game\CMakeFiles\Game.dir\cmake_pch.cxx.obj Game\CMakeFiles\Game.dir\Source\Game.cpp.obj | Engine\VIEngine.lib || Engine\VIEngine.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = Engine\VIEngine.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_LIBRARIES = Engine\VIEngine.lib  spdlogd.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  LINK_PATH = -LIBPATH:D:\GameEngine_code\GameEngine\Venders\bin
   OBJECT_DIR = Game\CMakeFiles\Game.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

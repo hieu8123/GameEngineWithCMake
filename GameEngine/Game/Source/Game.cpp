@@ -1,10 +1,17 @@
 #include <VIEngine/core/entry.h>
 #include <iostream>
+#include "Core/logger/logger.h"
 
 class Game : public VIEngine::Application {
 public:
 	Game(const VIEngine::ApplicationConfiguration& config) : VIEngine::Application(config) {
-
+		
+		LOG_TRACE("TRACE WORKS");
+		LOG_DEBUG("DEBUG WORKS");
+		LOG_INFO("INFO WORKS");
+		LOG_WARN("WARN WORKS");
+		LOG_ERROR("ERROR WORKS");
+		LOG_CRITICAL("CRITICAL WORKS");
 	}
 
 	virtual bool Init() override{

@@ -234,6 +234,9 @@ VIEngine_BINARY_DIR:STATIC=D:/GameEngine_code/GameEngine/out/build/x64-debug/Eng
 //Value Computed by CMake
 VIEngine_IS_TOP_LEVEL:STATIC=OFF
 
+//Dependencies for the target
+VIEngine_LIB_DEPENDS:STATIC=general;spdlogd;
+
 //Value Computed by CMake
 VIEngine_SOURCE_DIR:STATIC=D:/GameEngine_code/GameEngine/Engine
 
