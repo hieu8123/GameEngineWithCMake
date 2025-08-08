@@ -1,9 +1,10 @@
+#ifndef VIENGINE_HEADLESS
 #include"Window.h"
 
 #include"pch.h"
 
-#include"Core/Application.h"
-#include"Core/Logger/Logger.h"
+#include"core/Application.h"
+#include"core/logger/logger.h"
 
 #define GLAD_GL_IMPLEMENTATION
 #include<glad/gl.h>
@@ -38,6 +39,7 @@ namespace VIEngine {
 		CORE_LOG_INFO("Window created success");
 
 		glfwMakeContextCurrent(mWindow);
+		glfwSwapInterval(1);
 
 		if (!gladLoadGL((GLADloadfunc)glfwGetProcAddress)) {
 			CORE_LOG_CRITICAL("Glad loaded failed");
@@ -50,6 +52,10 @@ namespace VIEngine {
 	}
 
 	void GLFWPlatformWindow::Shutdown() {
+		if (mWindow) {
+			glfwDestroyWindow(mWindow);
+			mWindow = nullptr;
+		}
 		glfwTerminate();
 	}
 
@@ -67,3 +73,4 @@ namespace VIEngine {
 		return glfwWindowShouldClose(mWindow);
 	}
 }
+#endif

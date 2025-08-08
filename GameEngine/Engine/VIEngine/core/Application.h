@@ -21,6 +21,7 @@ namespace VIEngine {
 	protected:
 		Application() = default;
 		Application(const ApplicationConfiguration&);
+		virtual void OnUpdate(float deltaSeconds) {}
 	private:
 		ApplicationConfiguration mConfig;
 		Unique<NativeWindow> mNativeWindow;

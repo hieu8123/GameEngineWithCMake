@@ -1,0 +1,2 @@
+/usr/bin/ar qc libVIEngine.a CMakeFiles/VIEngine.dir/VIEngine/Window/GLFWPlatformWindow.cpp.o CMakeFiles/VIEngine.dir/VIEngine/Window/NullPlatformWindow.cpp.o CMakeFiles/VIEngine.dir/VIEngine/Window/WindowPlatform.cpp.o CMakeFiles/VIEngine.dir/VIEngine/core/Application.cpp.o CMakeFiles/VIEngine.dir/VIEngine/core/logger/logger.cpp.o
+/usr/bin/ranlib libVIEngine.a

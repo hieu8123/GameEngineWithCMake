@@ -1,6 +1,6 @@
-#include<VIEngine/Core/Entry.h>
-#include<VIEngine/Window/Window.h>
-#include<Core/Logger/Logger.h>
+#include<core/entry.h>
+#include<Window/Window.h>
+#include<core/logger/logger.h>
 
 class Game : public VIEngine::Application {
 public:
