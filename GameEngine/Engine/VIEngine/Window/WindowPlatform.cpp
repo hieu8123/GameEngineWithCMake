@@ -3,17 +3,26 @@
 #include"pch.h"
 
 namespace VIEngine {
-	NativeWindow* WindowPlatform::Create(EWindowPlatformSpec spec) {
-		NativeWindow* window = nullptr;
+        NativeWindow* WindowPlatform::Create(EWindowPlatformSpec spec) {
+                NativeWindow* window = nullptr;
 
-		switch (spec)
-		{
-		case EWindowPlatformSpec::GLFW: window = new GLFWPlatformWindow();
-		case EWindowPlatformSpec::SDL: VI_ASSERT("SDL Window not supported");
-		case EWindowPlatformSpec::None: VI_ASSERT("Unknown Window detected");
-		default: VI_ASSERT("Unknown Window detected");
-		}
+                switch (spec)
+                {
+                case EWindowPlatformSpec::GLFW:
+                        window = new GLFWPlatformWindow();
+                        break;
+                case EWindowPlatformSpec::SDL:
+                        VI_ASSERT("SDL Window not supported");
+                        break;
+                case EWindowPlatformSpec::DirectX:
+                        window = new DirectXPlatformWindow();
+                        break;
+                case EWindowPlatformSpec::None:
+                default:
+                        VI_ASSERT("Unknown Window detected");
+                        break;
+                }
 
-		return dynamic_cast<NativeWindow*>(window);
-	}
+                return window;
+        }
 }
