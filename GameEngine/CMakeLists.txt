@@ -1,5 +1,5 @@
-﻿
-cmake_minimum_required (VERSION 3.8)
+
+cmake_minimum_required (VERSION 3.20)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -9,6 +9,8 @@ endif()
 
 project ("GameEngine")
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 add_subdirectory(Engine)
 add_subdirectory(Game)
-add_subdirectory(Vendors/glfw)

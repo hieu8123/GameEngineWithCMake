@@ -22,6 +22,7 @@ namespace VIEngine {
 		NativeWindow(NativeWindow&) = default;
 	};
 
+#ifndef VIENGINE_HEADLESS
 	class GLFWPlatformWindow : public NativeWindow {
 	public:
 		GLFWPlatformWindow();
@@ -33,5 +34,21 @@ namespace VIEngine {
 		virtual bool ShouldClose() override;
 	private:
 		GLFWwindow* mWindow;
+	};
+#endif
+
+	class NullPlatformWindow : public NativeWindow {
+	public:
+		NullPlatformWindow();
+		~NullPlatformWindow();
+		virtual bool Init(const struct ApplicationConfiguration&) override;
+		virtual void Shutdown() override;
+		virtual void Swapbuffers() override;
+		virtual void PollsEvent() override;
+		virtual bool ShouldClose() override;
+	private:
+		int mTickCount;
+		int mMaxTicks;
+		bool mShouldClose;
 	};
 }

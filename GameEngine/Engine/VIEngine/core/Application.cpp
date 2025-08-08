@@ -1,7 +1,8 @@
 #include"Application.h"
 #include<iostream>
 
-#include"Core/Logger/Logger.h"
+#include"core/logger/logger.h"
+#include <chrono>
 
 namespace VIEngine {
 	Application::Application(const ApplicationConfiguration& config) : mConfig(config) {
@@ -23,9 +24,15 @@ namespace VIEngine {
 
 		OnInitClient();
 
+		auto previousTime = std::chrono::high_resolution_clock::now();
 		while (!mNativeWindow->ShouldClose()) {
-			mNativeWindow->Swapbuffers();
+			auto currentTime = std::chrono::high_resolution_clock::now();
+			std::chrono::duration<float> delta = currentTime - previousTime;
+			previousTime = currentTime;
 
+			OnUpdate(delta.count());
+
+			mNativeWindow->Swapbuffers();
 			mNativeWindow->PollsEvent();
 		}
 

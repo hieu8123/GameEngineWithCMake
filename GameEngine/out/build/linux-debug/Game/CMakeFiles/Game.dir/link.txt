@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Xlinker --dependency-file=CMakeFiles/Game.dir/link.d CMakeFiles/Game.dir/Source/Game.cpp.o -o Game  ../Engine/libVIEngine.a
