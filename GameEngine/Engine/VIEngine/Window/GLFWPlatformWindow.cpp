@@ -2,8 +2,8 @@
 
 #include"pch.h"
 
-#include"Core/Application.h"
-#include"Core/Logger/Logger.h"
+#include"core/Application.h"
+#include"core/logger/logger.h"
 
 #define GLAD_GL_IMPLEMENTATION
 #include<glad/gl.h>

@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 file(GLOB_RECURSE SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/VIEngine/*.cpp CMAKE_CONFIGURE_DEPENDS)
 add_library(${PROJECT_NAME} STATIC ${SRC_FILES})
 
-target_compile_definitions(${PROJECT_NAME} PUBLIC ON_VI_ENGINE DYNAMIC_LIB=0 DYNAMIC_BUILD=0)
+target_compile_definitions(${PROJECT_NAME} PUBLIC ON_VI_ENGINE DYNAMIC_LIB=0 DYNAMIC_BUILD=0 FMT_HEADER_ONLY)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
 	${CMAKE_CURRENT_SOURCE_DIR}/VIEngine
@@ -15,6 +15,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 
 target_link_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/Vendors/bin)
-target_link_libraries(${PROJECT_NAME} PUBLIC spdlogd glfw)
+target_link_libraries(${PROJECT_NAME} PUBLIC glfw)
 
-target_precompile_headers(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/VIEngine/pch.h ${CMAKE_SOURCE_DIR}/Vendors/include/glad/gl.h)
+target_precompile_headers(${PROJECT_NAME} PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/VIEngine/pch.h
+    ${CMAKE_SOURCE_DIR}/Vendors/include/glad/gl.h
+)

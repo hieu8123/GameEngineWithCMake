@@ -1,7 +1,7 @@
 #include"Application.h"
 #include<iostream>
 
-#include"Core/Logger/Logger.h"
+#include"core/logger/logger.h"
 
 namespace VIEngine {
 	Application::Application(const ApplicationConfiguration& config) : mConfig(config) {
